@@ -3,25 +3,36 @@ from InterfazAdministrador import *
 
 #Pruebas
 
-ruta_directorio_raiz = "C:/Users/57311/Desktop/Prueba_Proyecto"
+#Mostrar la ruta del directorio de prueba
+directorio_actual = os.getcwd()
+nombre_carpeta = "Prueba_Proyecto"
+ruta_carpeta_deseada = os.path.join(directorio_actual, nombre_carpeta)
 
-prueba_crear_archivo =  "C:/Users/57311/Desktop/Prueba_Proyecto/hola2.txt"
+#crear archivo
+nombre_archivo = "hola2.txt"
+prueba_crear_archivo = os.path.join(ruta_carpeta_deseada, nombre_archivo)
 
-prueba_eliminar_archivo = "C:/Users/57311/Desktop/Prueba_Proyecto/hola2.txt"
+#eliminar archivo
+prueba_eliminar_archivo =  os.path.join(ruta_carpeta_deseada, nombre_archivo)
 
-prueba_crear_directorio =  "C:/Users/57311/Desktop/Prueba_Proyecto/3"
+#crear directorio
+nombre_directorio = "3"
+prueba_crear_directorio =  os.path.join(ruta_carpeta_deseada, nombre_directorio)
 
-prueba_eliminar_directorio = "C:/Users/57311/Desktop/Prueba_Proyecto/3"
+#eliminar directorio
+prueba_eliminar_directorio = os.path.join(ruta_carpeta_deseada, nombre_directorio)
 
-archivo = "hola2.txt"
+#renombrar archivo
+nombre_renombrar_archivo = "hola3.txt"
+nuevo_nombre_archivo = "hola4.txt"
+prueba_renombrar_archivo = os.path.join(ruta_carpeta_deseada, nombre_renombrar_archivo)
 
-prueba_renombrar_archivo = "C:/Users/57311/Desktop/Prueba_Proyecto/hola2.txt"
-
-nombre_nuevo_archivo = "hola3.txt"
-
-prueba_renombrar_directorio = "C:/Users/57311/Desktop/Prueba_Proyecto/3"
-
+#renombrar directorio
+nombre_renombrar_directorio = "3"
 nombre_nuevo_directorio = "4"
+prueba_renombrar_directorio = os.path.join(ruta_carpeta_deseada, nombre_renombrar_directorio)
+
+
 
 #Menu del administrador de archivos Para pruebas, debe hacerse estas funciones desde La interfaz grafica
 
@@ -57,7 +68,7 @@ def menu():
             print("\n")
             pass
         elif opcion == 5:
-            renombrar_archivo(prueba_renombrar_archivo, nombre_nuevo_archivo)
+            renombrar_archivo(prueba_renombrar_archivo, nuevo_nombre_archivo)
             print("\n")
             pass
         elif opcion == 6:
@@ -65,7 +76,7 @@ def menu():
             print("\n")
             pass
         elif opcion == 7:
-            imprimir_arbol(construir_arbol_directorio(ruta_directorio_raiz))
+            imprimir_arbol(construir_arbol_directorio(ruta_carpeta_deseada))
             pass
         elif opcion == 8:
             interfaz()
